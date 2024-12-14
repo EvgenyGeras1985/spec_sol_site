@@ -1,0 +1,1 @@
+(window.serpWebpackJsonp=window.serpWebpackJsonp||[]).push([["8b2664"],{"y+U/":function(e,t,n){"use strict";n.d(t,"a",(function(){return i}));var c=n("4Gwv"),o=n("zy2/"),p=n("ZWnW"),s=Object(o.withBemMod)(Object(p.a)(),{view:"default"}),i=Object(c.g)({desktop:s})}}]);

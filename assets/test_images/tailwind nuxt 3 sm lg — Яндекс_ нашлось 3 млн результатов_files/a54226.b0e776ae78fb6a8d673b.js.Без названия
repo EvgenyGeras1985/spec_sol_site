@@ -1,0 +1,1 @@
+(window.serpWebpackJsonp=window.serpWebpackJsonp||[]).push([["a54226"],{TMBs:function(n,o,t){"use strict";t.d(o,"a",(function(){return r}));var c=t("nAbZ"),e=t("oUqw"),i=function(n){n.stopPropagation()};function r(n){return function(o){return Object(e.jsx)("div",{onClick:i,onKeyDown:i,children:Object(e.jsx)(n,Object(c.a)({},o))})}}}}]);

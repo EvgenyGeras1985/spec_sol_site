@@ -1,0 +1,1 @@
+(window.serpWebpackJsonp=window.serpWebpackJsonp||[]).push([["62d79b"],{"3Tvw":function(e,t,n){"use strict";n.d(t,"a",(function(){return p}));var s=n("4Gwv"),c=n("zy2/"),o=n("ZMIk"),i=Object(c.createClassNameModifier)(Object(o.a)(),{position:"center"}),p=Object(s.g)({desktop:i})}}]);

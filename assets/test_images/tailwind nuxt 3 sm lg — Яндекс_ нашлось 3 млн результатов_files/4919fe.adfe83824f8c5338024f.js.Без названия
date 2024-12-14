@@ -1,0 +1,1 @@
+(window.serpWebpackJsonp=window.serpWebpackJsonp||[]).push([["4919fe"],{G6E9:function(e,n,s){"use strict";s.d(n,"a",(function(){return t}));var r=s("cDcd");function t(e){var n=e.base,s=e.elem,t=e.className,c=e.mods;return Object(r.useMemo)((function(){return"string"==typeof n?n+(t?" "+t:""):s?n(s,c,[t]):n(c,[t])}),[n,s,t,c])}}}]);

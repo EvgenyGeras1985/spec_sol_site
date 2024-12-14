@@ -1,0 +1,1 @@
+(window.serpWebpackJsonp=window.serpWebpackJsonp||[]).push([["114096"],{WHGW:function(e,n,t){"use strict";t.r(n),t.d(n,"Feedback",(function(){return r}));var c=t("4Gwv"),o=t("9wFV"),p=t("NJ0Z");t.d(n,"FeedbackFeatureType",(function(){return p.a}));var r=Object(c.c)({desktop:o.a},{file:"depot/components/Feedback/index.ts"})}}]);

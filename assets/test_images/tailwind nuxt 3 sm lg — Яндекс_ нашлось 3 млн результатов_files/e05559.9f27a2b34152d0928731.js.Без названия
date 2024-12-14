@@ -1,0 +1,1 @@
+(window.serpWebpackJsonp=window.serpWebpackJsonp||[]).push([["e05559"],{WMz6:function(e,n,r){"use strict";r.r(n),r.d(n,"Feedback",(function(){return p}));var c=r("nAbZ"),o=r("oUqw"),t=r("0I89"),s=r("9wFV"),a=r("V8xl"),p=function(e){return Object(o.jsx)(s.a,Object(c.a)({},e,{reactBus:t.a,uploadScreenshot:a.uploadSerpScreenshot}))}}}]);
