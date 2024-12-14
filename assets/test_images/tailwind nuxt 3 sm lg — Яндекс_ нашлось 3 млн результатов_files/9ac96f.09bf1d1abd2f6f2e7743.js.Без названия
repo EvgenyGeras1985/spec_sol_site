@@ -1,1 +1,0 @@
-(window.serpWebpackJsonp=window.serpWebpackJsonp||[]).push([["9ac96f"],{"JQ+9":function(e,n,o){"use strict";o.d(n,"a",(function(){return t}));var p=o("4Gwv"),s=o("NOfe"),t=Object(p.c)({desktop:s.a},{file:"depot/components/Modal/index.ts"})}}]);

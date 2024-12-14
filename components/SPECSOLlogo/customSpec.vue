@@ -14,7 +14,12 @@
 .spec {
   width: 50px;
   height: 50px;
-  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bolder;
+  text-shadow: 1px 1px 1.2px #20BF6B;
 
   &__fst {color: #20BF6B;}
 

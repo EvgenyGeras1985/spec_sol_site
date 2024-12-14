@@ -1,1 +1,0 @@
-(window.serpWebpackJsonp=window.serpWebpackJsonp||[]).push([["d2ac87"],{DG3z:function(e,t,c){"use strict";c.d(t,"a",(function(){return p}));var n=c("4Gwv"),o=c("zy2/"),s=c("ZWnW"),a=Object(o.createClassNameModifier)(Object(s.a)(),{theme:"promo"}),p=Object(n.g)({desktop:a})}}]);

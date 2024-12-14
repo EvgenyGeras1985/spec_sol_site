@@ -1,1 +1,0 @@
-(window.serpWebpackJsonp=window.serpWebpackJsonp||[]).push([["9664b8"],{"9Cu/":function(e,t,n){"use strict";n.d(t,"a",(function(){return s}));var c=n("zy2/"),i=n("sgPz"),s=Object(c.withBemMod)(Object(i.b)(),{view:"default"})},wQV3:function(e,t,n){"use strict";n.d(t,"a",(function(){return s}));var c=n("zy2/"),i=n("sgPz"),s=Object(c.withBemMod)(Object(i.b)(),{size:"m"})}}]);

@@ -1,45 +1,16 @@
 <script setup lang="ts">
-  import Basket from "~/components/Basket.vue";
-  import CustomButton from "~/components/CustomButtons/CustomButton.vue";
+  import Basket from "~/components/CustomButtons/BasketBtn.vue";
   import CustomSpec from "~/components/SPECSOLlogo/customSpec.vue";
-
-  const arr = [
-    {
-      id: 1,
-      text: "Главная",
-      lnk: '/'
-    },
-    {
-      id: 2,
-      text: "Каталог",
-      lnk: "/catalog"
-    },
-    {
-      id: 3,
-      text: "Портфолио",
-      lnk: "/portfolio"
-    },
-    {
-      id: 4,
-      text: "Личный Кабинет",
-      lnk: "/personalAccount"
-    }
-  ]
+  import ListBar from "~/components/Nav/ListBar.vue";
 </script>
 
 <template>
   <nav>
     <custom-spec />
-    <div>
-      <ul>
-        <li v-for="{id, text, lnk} in arr" :id="id">
-          <NuxtLink :to=lnk>{{ text }}</NuxtLink>
-        </li>
-      </ul>
-    </div>
-    <custom-button to="/login">
-      Войти
-    </custom-button>
+    <list-bar />
+    <NuxtLink class="log__lnk" to="/login">
+      Мой Аккаунт
+    </NuxtLink>
     <basket />
   </nav>
 </template>
@@ -47,12 +18,40 @@
 <style scoped lang="scss">
 @import 'assets/scss/_global.scss';
   nav {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(166deg, #FFF68D, #70EC94);
 
+    & .log__lnk {
+      opacity: 0;
+      pointer-events: none;
+      cursor: default;
+    }
   }
 
 @include breakpoint(large) {
   nav {
+    height: 4.2rem;
+    flex-direction: row;
 
+    & .log__lnk {
+      opacity: 1;
+      pointer-events: visible;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-shadow: 3px 3px 3px silver;
+      color: #408654;
+
+      &:hover {
+        color: #f8af1a;
+      }
+    }
   }
 }
 </style>
