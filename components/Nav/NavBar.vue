@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import Basket from "~/components/Basket.vue";
   import CustomButton from "~/components/CustomButtons/CustomButton.vue";
+  import CustomSpec from "~/components/SPECSOLlogo/customSpec.vue";
 
   const arr = [
     {
@@ -28,10 +29,7 @@
 
 <template>
   <nav>
-    <div>
-      <p>SPEC</p>
-      <p>SOL</p>
-    </div>
+    <custom-spec />
     <div>
       <ul>
         <li v-for="{id, text, lnk} in arr" :id="id">
@@ -39,16 +37,18 @@
         </li>
       </ul>
     </div>
-    <custom-button />
+    <custom-button to="/login">
+      Войти
+    </custom-button>
     <basket />
   </nav>
 </template>
 
 <style scoped lang="scss">
 @import 'assets/scss/_global.scss';
-nav {
+  nav {
 
-}
+  }
 
 @include breakpoint(large) {
   nav {
