@@ -38,7 +38,7 @@
   </div>
   <button class="lst__tog" @click="showMenu(isMenu)">
     <h1>
-      press
+      +
     </h1>
   </button>
 </template>
@@ -55,6 +55,7 @@
    justify-content: space-around;
    align-items: center;
    border-top: groove;
+   border-bottom: groove;
    background: linear-gradient(166deg, #FFF68D, #70EC94);
 
 
@@ -76,14 +77,24 @@
      }
    }
 
+   //Сменить на бургер через before after
    &__tog{
-     z-index: 3;
+     z-index: 22;
+     position: absolute;
+     top: 104px;
+     left: 10px;
+     padding: 8px;
+     border-radius: 50px;
+     border: 1px solid black;
+
+     &:hover{color: #f8af1a;}
    }
  }
 
 //class to toggle burger
  .active {
    left: 0px;
+   transition: left 0.5s ease-in-out;
  }
 
 @include breakpoint(large) {
@@ -92,13 +103,15 @@
     position: initial;
     flex-direction: row;
     border-top: none;
+    border-bottom: none;
     background: none;
 
     &__tog{
-      z-index: -3;
-      opacity: 0;
-      pointer-events: none;
-      cursor: default;
+      display: none;
+      //z-index: -3;
+      //opacity: 0;
+      //pointer-events: none;
+      //cursor: default;
     }
 
     &__elem {

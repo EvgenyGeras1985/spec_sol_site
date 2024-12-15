@@ -18,13 +18,14 @@
 <style scoped lang="scss">
 @import 'assets/scss/_global.scss';
   nav {
+    position: fixed;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background: linear-gradient(166deg, #FFF68D, #70EC94);
+    //background: linear-gradient(166deg, #FFF68D, #70EC94);
   }
 
   .log__lnk {
