@@ -5,7 +5,7 @@
 <template>
   <div class="bst">
     <NuxtLink class="bst__btn" to="/basket">
-      <img src="../../assets/test_images/basket.png" alt="basket" />
+      <img src="../../assets/test_images/cart.png" alt="basket" />
     </NuxtLink>
   </div>
 </template>
@@ -14,10 +14,10 @@
 @import 'assets/scss/global';
 .bst {
   position: absolute;
-  top: 8px;
-  right: 20px;
-  width: 4.2rem;
-  height: 3.2rem;
+  top: 22px;
+  right: 30px;
+  width: 3.2rem;
+  height: 2.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +35,7 @@
 
 @include breakpoint(large) {
   .bst {
-
+    position: static;
   }
 }
 </style>
