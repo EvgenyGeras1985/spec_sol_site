@@ -108,10 +108,6 @@
 
     &__tog{
       display: none;
-      //z-index: -3;
-      //opacity: 0;
-      //pointer-events: none;
-      //cursor: default;
     }
 
     &__elem {

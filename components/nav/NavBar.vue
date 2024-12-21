@@ -6,7 +6,7 @@
 
 <template>
   <nav>
-    <custom-spec />
+    <logo />
     <list-bar />
     <NuxtLink class="log__lnk" to="/login">
       Мой Аккаунт
@@ -25,7 +25,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    //background: linear-gradient(166deg, #FFF68D, #70EC94);
+    background: linear-gradient(166deg, #FFF68D, #70EC94);
   }
 
   .log__lnk {
@@ -47,6 +47,7 @@
   nav {
     height: 6.2rem;
     flex-direction: row;
+    background: none;
 
     & .log__lnk {
       position: initial;
