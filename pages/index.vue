@@ -1,22 +1,26 @@
-<template>
-  <h1>1 : 41 : 00 of video</h1>
-  <a href="#" @click="view('home')">Home</a>
-  <a href="#" @click="view('test')">test</a>
-
-  <LazyButton v-if="page == 'home'"></LazyButton>
-  <LazyTest v-if="page == 'test'"></LazyTest>
-
-</template>
-
 <script setup lang="ts">
-const page = ref('home')
-
-function view(name: string){
-  page.value = name
-}
+ import MainBlock from "~/components/MainPage/MainBlock/MainBlock.vue";
+ import SectionOne from "~/components/MainPage/Section_one/SectionOne.vue";
+ import BannerElement from "~/components/MainPage/BannerOne/bannerElement.vue";
+ import MapElement from "~/components/MainPage/map/mapElement.vue";
+ import SectionTwo from "~/components/MainPage/SectionTwo/SectionTwo.vue";
+ import BannerSecond from "~/components/MainPage/BannerTwo/bannerSecond.vue";
 </script>
 
+<template>
+  <main-block />
+  <section-one />
+  <banner-element />
+  <section-two />
+  <banner-second />
+  <map-element />
+</template>
 
-<style scoped>
+<style scoped lang="scss">
+@import 'assets/scss/global';
 
+
+@include breakpoint(large) {
+
+}
 </style>

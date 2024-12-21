@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <button>Click me</button>
+  <h1>Registration</h1>
 </template>
 
 <style scoped>
