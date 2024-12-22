@@ -14,11 +14,11 @@
     <main-element />
     <section-one />
     <banner-element />
-<!--    <section-two />-->
+    <section-two />
 <!--    <form-section />-->
 <!--    <banner-second />-->
-<!--    <map-element />-->
-<!--    <footer-section />-->
+    <map-element />
+    <footer-section />
   </div>
 </template>
 
