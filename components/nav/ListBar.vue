@@ -30,8 +30,8 @@
 
 <template>
   <div :class="[isMenu ? activeClass : ' ', noVisibleMenu]">
-      <div class="lst__elem" v-for="{id, text, lnk} in arr" :id="id">
-        <NuxtLink class="lst__elem__lnk" :to=lnk>
+      <div class="lst__elem"  v-for="{id, text, lnk} in arr" :id="id">
+        <NuxtLink @click="showMenu(isMenu)" class="lst__elem__lnk" :to=lnk>
           {{ text }}
         </NuxtLink>
       </div>
@@ -82,7 +82,7 @@
      z-index: 22;
      position: absolute;
      top: 104px;
-     left: 10px;
+     left: 1010px;
      padding: 8px;
      border-radius: 50px;
      border: 1px solid black;
@@ -93,7 +93,7 @@
 
 //class to toggle burger
  .active {
-   left: 0px;
+   left: 1000px;
    transition: left 0.5s ease-in-out;
  }
 

@@ -11,6 +11,12 @@
 <style scoped lang="scss">
 @import 'assets/scss/_global.scss';
   .logo {
+    opacity: 0;
+  }
+
+@include breakpoint(large) {
+  .logo {
+    opacity: 1;
     width: 4.6rem;
     height: 4.6rem;
 
@@ -19,9 +25,6 @@
       height: 100%;
     }
   }
-
-@include breakpoint(large) {
-
 }
 </style>
 

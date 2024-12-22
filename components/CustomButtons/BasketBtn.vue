@@ -15,7 +15,7 @@
 .bst {
   position: absolute;
   top: 22px;
-  right: 30px;
+  left: 1323px;
   width: 3.2rem;
   height: 2.8rem;
   display: flex;
@@ -35,6 +35,8 @@
 
 @include breakpoint(large) {
   .bst {
+    left: 0;
+    right: 32px;
     position: static;
   }
 }

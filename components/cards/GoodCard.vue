@@ -1,42 +1,26 @@
 <script setup lang="ts">
+  import { GoodCard } from "~/types/GoodCard"
 
+  const props = defineProps<{
+    good: GoodCard
+  }>()
   const handler = () => alert('price button in process...')
 
-  const arrTestGoods = [
-    {
-      img: "test_good_img.png",
-      title: "test title",
-      description: "здесь будет описание",
-      price: 100000
-    },
-    {
-      img: "test_good_img.png",
-      title: "test title",
-      description: "здесь будет описание",
-      price: 100000
-    },
-    {
-      img: "test_good_img.png",
-      title: "test title",
-      description: "здесь будет описание",
-      price: 100000
-    }
-  ]
 </script>
 
 <template>
-  <section class="card" v-for="{img, title,description,price} in arrTestGoods">
+  <section class="card">
     <div class="card__img">
-      <img :src="img" alt="товар">
+      <img :src="good.img" alt="товар">
     </div>
     <article class="card__title">
-      <h2>{{title}}</h2>
+      <h2>{{good.title}}</h2>
     </article>
     <div class="card__description">
-      <p>{{description}}</p>
+      <p>{{good.description}}</p>
     </div>
     <button @click="handler" class="card__btn">
-      От{{price}}руб.
+      От{{good.price}}руб.
     </button>
   </section>
 </template>
@@ -44,8 +28,8 @@
 <style scoped lang="scss">
 @import 'assets/scss/_global.scss';
   .card {
-    width: 60%;
-    height: 70%;
+    width: 80%;
+    height: 60vh;
     margin: 1.5rem;
     padding: 0.7rem;
     display: flex;
@@ -53,7 +37,9 @@
     align-items: center;
     flex-direction: column;
     outline: 1px solid black;
+    border-radius: 15px;
     cursor: pointer;
+    background: #ebebeb;
 
 
     &__img {
@@ -93,6 +79,7 @@
 
     &:hover{
       box-shadow: 10px 5px 5px black;
+      transition: box-shadow 0.5s;
     }
 
     &__img{}
