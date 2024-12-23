@@ -20,35 +20,26 @@ const props = defineProps<{
 
 <style scoped lang="scss">
 @import 'assets/scss/_global.scss';
-.adv {
-  width: 80%;
-  height: 50vh;
-
-  &__id {
-    margin: 1rem;
-  }
+.fcard {
+  width: 60%;
+  height: 30vh;
+  text-align: center;
 
   &__title {
     margin: 1rem;
   }
   &__description {
-    margin: 1rem;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 }
 
 @include breakpoint(large) {
-  .adv {
+  .fcard {
     width: 33%;
-    margin: 1rem;
+    text-align: center;
 
-    &__id {}
     &__title {}
-    &__description {
-      width: 60%;
-      text-align: justify;
-      font-size: 1.4rem;
-    }
+    &__description {}
   }
 }
 </style>

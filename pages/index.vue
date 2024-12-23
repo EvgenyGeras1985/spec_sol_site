@@ -15,8 +15,8 @@
     <section-one />
     <banner-element />
     <section-two />
-<!--    <form-section />-->
-<!--    <banner-second />-->
+    <banner-second />
+    <form-section />
     <map-element />
     <footer-section />
   </div>

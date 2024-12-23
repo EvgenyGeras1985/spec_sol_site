@@ -8,7 +8,7 @@
   {
     id: 2,
     text: "Каталог",
-    lnk: "/catalog"
+    lnk: "/catalog/catalog"
   },
   {
     id: 3,

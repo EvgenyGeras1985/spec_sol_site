@@ -13,12 +13,6 @@ const handler = () => alert('in process...')
 <style scoped lang="scss">
 @import 'assets/scss/_global.scss';
   .banner{
-    &__title {}
-    &__btn {}
-  }
-
-@include breakpoint(large) {
-  .banner{
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -27,6 +21,14 @@ const handler = () => alert('in process...')
     height: 15rem;
     color: #d2d2d2;
     background: black;
+
+    &__title {}
+    &__btn {}
+  }
+
+@include breakpoint(large) {
+  .banner{
+
 
     &__title {}
     &__btn {
