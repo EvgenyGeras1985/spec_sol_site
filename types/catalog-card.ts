@@ -1,4 +1,4 @@
-export interface GallaryCard {
+export interface CatalogCard {
     img: string
     title: string
     category: string

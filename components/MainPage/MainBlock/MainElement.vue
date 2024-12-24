@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import CustomSpec from "~/components/SPECSOLlogo/customSpec.vue";
+  import CustomSpec from "~/components/spec-sol.vue";
   const handler = () => alert("in process.....")
 </script>
 

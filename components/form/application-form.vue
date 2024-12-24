@@ -1,18 +1,22 @@
 <script setup lang="ts">
-  import ZayavkaForm from "~/components/ZayavkaForm/zayavkaForm.vue";
+
 </script>
 
 <template>
-  <section class="zvk">
-    <h1 class="zvk__title">Сформировать заявку</h1>
-    <p class="zvk__description">Заполните заявку и получите скидку 15% на монтажные работы</p>
-    <zayavka-form />
+  <section class="app-form">
+    <h1 class="app-form__title">
+      Сформировать заявку
+    </h1>
+    <p class="app-form__description">
+      Заполните заявку и получите скидку 15% на монтажные работы
+    </p>
+    <application />
   </section>
 </template>
 
 <style scoped lang="scss">
 @import 'assets/scss/global';
-  .zvk{
+  .app-form{
     width: 100%;
     height: 100vh;
     display: flex;
@@ -33,8 +37,6 @@
   }
 
 @include breakpoint(large) {
-  .zvk{
 
-  }
 }
 </style>

@@ -1,25 +1,24 @@
 <script setup lang="ts">
-import { GallaryCard } from "~/types/GallaryCard"
+  import { CatalogCard } from "~/types/catalog-card"
 
-const props = defineProps<{
-  card: GallaryCard
-}>()
-const handler = () => alert('price button in process...')
-
+  const props = defineProps<{
+    card: CatalogCard
+  }>()
+  const handler = () => alert('price button in process...')
 </script>
 
 <template>
-  <section class="gallary-card">
-    <div class="gallary-card__img">
+  <section class="catalog-card">
+    <div class="catalog-card__img">
       <img :src="card.img" alt="товар">
     </div>
-    <article class="gallary-card__title">
+    <article class="catalog-card__title">
       <h2>{{card.title}}</h2>
     </article>
-    <div class="gallary-card__description">
+    <div class="catalog-card__description">
       <p>{{card.description}}</p>
     </div>
-    <button @click="handler" class="gallary-card__btn">
+    <button @click="handler" class="catalog-card__btn">
       От{{card.price}}руб.
     </button>
   </section>
@@ -27,9 +26,9 @@ const handler = () => alert('price button in process...')
 
 <style scoped lang="scss">
 @import 'assets/scss/_global.scss';
-.gallary-card {
+.catalog-card {
   width: 80%;
-  height: 60vh;
+  height: 30rem;
   margin: 1.5rem;
   padding: 0.7rem;
   display: flex;
@@ -40,7 +39,7 @@ const handler = () => alert('price button in process...')
   border-radius: 15px;
   cursor: pointer;
   background: #ebebeb;
-
+  box-shadow: 4px 2px 2px black;
 
   &__img {
     width: 100%;
@@ -62,7 +61,7 @@ const handler = () => alert('price button in process...')
 
   &__btn {
     cursor: pointer;
-    padding: 7px 15px;
+    padding: 7px 17px;
     border-radius: 10px;
     text-align: center;
     background: linear-gradient(166deg, #FFF68D, #408654);
@@ -74,12 +73,12 @@ const handler = () => alert('price button in process...')
   }
 }
 @include breakpoint(large) {
-  .gallary-card{
+  .catalog-card{
     width: 20%;
 
     &:hover{
       box-shadow: 10px 5px 5px black;
-      transition: box-shadow 0.5s;
+      transition: box-shadow 0.3s ease-in-out;
     }
 
     &__img{}

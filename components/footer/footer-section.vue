@@ -1,22 +1,18 @@
 <script setup lang="ts">
-  import FootCard from "~/components/cards/FootCard.vue";
-
-
   const footArr = [
     {
       id: 1,
       title: "Адрес :",
-      description:"м. Отрадное г. Москва"
+      description:"Москва, ул. Докукина, д.8, стр.2"
     },
     {
       id: 2,
       title: "Время работы :",
-      description: "Время работы :\n" +
-          "Пн - Пт: 09:00 -18:00 Сб - Вс: выходной",
+      description: "Время работы : Пн - Пт: 09:00 - 18:00 Сб - Вс: выходной",
     },
     {
       id: 3,
-      title: "8 (993) 336-64-15",
+      title: "8-930-937-33-20",
       description: "spec.sol@yandex.ru",
     }
   ]
@@ -24,8 +20,12 @@
 
 <template>
   <footer class="foot">
-    <article class="foot__title"><h2>Контакты</h2></article>
-    <foot-card v-for="fcard in footArr" :key="fcard.id" :fcard="fcard" />
+    <article class="foot__title">
+      <h2>
+        Контакты
+      </h2>
+    </article>
+    <card-footer v-for="elem in footArr" :key="elem.id" :elem="elem" />
   </footer>
 </template>
 
@@ -44,7 +44,7 @@
   &__title {
     width: 100%;
     text-align: center;
-    font-size: 28px;
+    font-size: 2rem;
     font-weight: bold;
     margin: 3rem;
   }
@@ -57,9 +57,7 @@
     flex-direction: row;
 
     &__title {
-      font-size: 28px;
-      font-weight: bold;
-      margin: 3rem;
+      font-size: 1.4rem;
     }
   }
 }

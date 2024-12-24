@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import GoodCard from "~/components/cards/GoodCard.vue";
-
   const arrTestGoods = [
     {
       img: "test_good_img.png",
@@ -25,7 +23,7 @@
 
 <template>
   <section class="section-one">
-    <good-card v-for="card in arrTestGoods" :key="card.price" :good="card" />
+    <card-catalog v-for="card in arrTestGoods" :key="card.price" :card="card" />
   </section>
 </template>
 
@@ -47,10 +45,3 @@
   }
 }
 </style>
-
-
-
-<!-- Test Cards -->
-<!--    <good-card :good="arrTestGoods[0]"></good-card>-->
-<!--    <good-card :good="arrTestGoods[1]"></good-card>-->
-<!--    <good-card :good="arrTestGoods[2]"></good-card>-->

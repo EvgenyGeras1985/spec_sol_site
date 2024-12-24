@@ -1,13 +1,12 @@
 <script setup lang="ts">
-  import Basket from "~/components/CustomButtons/BasketBtn.vue";
-  import CustomSpec from "~/components/SPECSOLlogo/customSpec.vue";
-  import ListBar from "~/components/nav/ListBar.vue";
+  import Basket from "~/components/custom-buttons/basket-button.vue";
+  import NavList from "~/components/nav/nav-list.vue";
 </script>
 
 <template>
   <nav>
     <logo />
-    <list-bar />
+    <nav-list/>
     <NuxtLink class="log__lnk" to="/login">
       Мой Аккаунт
     </NuxtLink>

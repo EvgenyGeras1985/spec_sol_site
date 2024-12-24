@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import {ref} from "vue"
+  import { ref } from "vue"
 
-const name = ref('')
-const email = ref('')
-const phone = ref()
-const comment = ref('')
+  const name = ref('')
+  const email = ref('')
+  const phone = ref()
+  const comment = ref('')
 
-const test = (name:string, email:string, phone:number, comment:string) => {
-  return alert(name +email + phone + comment)
-}
+  const test = (name:string, email:string, phone:number, comment:string) => {
+    return alert(name +email + phone + comment)
+  }
 </script>
 
 <template>
-  <form class="zform" action="">
-    <input class="zform__field" type="text" placeholder="Имя" v-model="name" />
-    <input class="zform__field" type="text" placeholder="email" v-model="email" />
-    <input class="zform__field" type="number" placeholder="phone" v-model="phone" />
-    <input class="zform__field" type="text" placeholder="Комментарий" v-model="comment" />
-    <input class="zform__btn" @click="test(name, email, phone, comment)" type="submit" placeholder="Отправить заявку">
+  <form class="application" action="">
+    <input class="application__field" type="text" placeholder="Имя" v-model="name" />
+    <input class="application__field" type="text" placeholder="email" v-model="email" />
+    <input class="application__field" type="number" placeholder="phone" v-model="phone" />
+    <input class="application__field" type="text" placeholder="Комментарий" v-model="comment" />
+    <input class="application__btn" @click="test(name, email, phone, comment)" type="submit" />
   </form>
 </template>
 
 <style scoped lang="scss">
 @import 'assets/scss/global';
-.zform {
+.application {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -65,7 +65,7 @@ const test = (name:string, email:string, phone:number, comment:string) => {
 }
 
 @include breakpoint(large) {
-  .zform {
+  .application {
     flex-direction: row;
     flex-wrap: wrap;
 

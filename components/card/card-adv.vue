@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import { AdvCard } from "~/types/AdvCard"
+  import { AdvCard } from "~/types/adv-card"
 
-const props = defineProps<{
-  adv: AdvCard
-}>()
-const handler = () => alert('price button in process...')
-
+  const props = defineProps<{
+    adv: AdvCard
+  }>()
 </script>
 
 <template>
   <section class="adv">
-    <h2 class="adv__id">{{adv.id}}</h2>
+    <p class="adv__id">{{adv.id}}</p>
+
     <article class="adv__title">
       <h2>{{adv.title}}</h2>
     </article>
+
     <div class="adv__description">
       <p>{{adv.description}}</p>
     </div>
@@ -23,31 +23,36 @@ const handler = () => alert('price button in process...')
 <style scoped lang="scss">
 @import 'assets/scss/_global.scss';
   .adv {
-    width: 80%;
-    height: 50vh;
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 
     &__id {
-      margin: 1rem;
+      font-weight: bold;
+      font-size: 6rem;
+      color: rgba(17, 17, 17, .24);
     }
 
-    &__title {
-      margin: 1rem;
-    }
+    &__title { margin: 1rem 0; }
+
     &__description {
-      margin: 1rem;
+      width: 14rem;
       font-size: 1.8rem;
     }
   }
 
 @include breakpoint(large) {
   .adv {
-    width: 33%;
+    width: 25%;
     margin: 1rem;
 
     &__id {}
     &__title {}
+
     &__description {
-      width: 60%;
+      height: 7rem;
       text-align: justify;
       font-size: 1.4rem;
     }
