@@ -1,22 +1,26 @@
 <script setup lang="ts">
-import {ref} from "vue"
+  import {ref} from "vue"
+  import { useUserStore } from "~/store/user-store";
 
-const email = ref('')
-const password = ref('')
-const phone = ref('')
+  const store = useUserStore()
 
-const inReg = (email:string, password:string, phone:number) => {
-  return alert(email + password )
-}
+  const email = ref('')
+  const password = ref('')
+  const phone = ref('')
+
+  const inReg = (email:string, password:string, phone:string) => {
+    store.registration( email, password, phone )
+    navigateTo('/login')
+  }
 </script>
 
 <template>
   <section class="reg">
-    <form class="reg__frm" action="">
+    <form class="reg__frm" action="post">
       <input class="reg__field" type="text" placeholder="email" v-model="email" />
-      <input class="reg__field" type="number" placeholder="phone" v-model="phone" />
+      <input class="reg__field" type="text" placeholder="phone" v-model="phone" />
       <input class="reg__field" type="text" placeholder="password" v-model="password" />
-      <input class="reg__btn" @click="inReg(email, phone, password)" type="submit" />
+      <input class="reg__btn" @click="inReg(email, phone, password)" value="Зарегестрироваться" type="button" />
       <NuxtLink class="reg__lnk" to="/login">Уже есть Аккаунт? Войти</NuxtLink>
     </form>
   </section>
@@ -59,12 +63,12 @@ const inReg = (email:string, password:string, phone:number) => {
   }
 
   &__btn {
-    width: 40%;
+    width: 62%;
     cursor: pointer;
     font-weight: bold;
     font-size: 20px;
     border-radius: 10px;
-    padding: 10px 15px;
+    padding: 10px 20px;
 
     &:hover {
       color: #d2d2d2;
@@ -93,7 +97,7 @@ const inReg = (email:string, password:string, phone:number) => {
     }
 
     &__btn {
-      width: 10%;
+      width: 14%;
     }
   }
 }

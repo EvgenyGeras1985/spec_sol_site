@@ -25,7 +25,6 @@
 
 <style scoped lang="scss">
 @import 'assets/scss/global';
-
   .section-one {
     width: 100%;
     height: 100%;
