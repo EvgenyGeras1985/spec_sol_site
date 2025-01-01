@@ -20,22 +20,24 @@ export const useUserStore = defineStore('user', {
         getAuth: (state) => state.auth
     },
     actions: {
-            async registration(email: string, phone: string, password: string, name:string, surname:string,patronymics:string) {
-                try {
-                    const user = await axios.post('http://localhost:9100/api/users/registration', {
-                        email: email,
-                        phone: phone,
-                        password: password,
-                        name: name,
-                        surname: surname,
-                        patronymics: patronymics,
-                    }).then((payload) => {
+        async registration(email: string, phone: string, password: string, name:string, surname:string,patronymics:string) {
+            try {
+                const user = await axios.post('http://localhost:9100/api/users/registration', {
+                    email: email,
+                    phone: phone,
+                    password: password,
+                    name: name,
+                    surname: surname,
+                    patronymics: patronymics,
+                })
+                    .then((payload) => {
                         localStorage.setItem('token', payload.data.token)
                     })
-                } catch (err) {
-                    console.log(err)
-                }
-            },
+            } catch (err) {
+                console.log(err)
+            }
+        },
+
         async login(email: string, password: string) {
                 try{
                     const user = await axios.post('http://localhost:9100/api/users/login', {
@@ -55,29 +57,30 @@ export const useUserStore = defineStore('user', {
                     console.log(err)
                 }
         },
+
         async logout() {
             localStorage.clear()
-            this.auth = false
+            this.$state.auth = false
         },
 
         async checkAuth() {
-                try{
-                    const myToken = localStorage.getItem('token')
-                    const token = await axios.post('http://localhost:9100/api/users/auth', {
-                        token: myToken
+            try{
+                const myToken = localStorage.getItem('token')
+                const token = await axios.post('http://localhost:9100/api/users/auth', {
+                    token: myToken
+                })
+                    .then((req) => {
+                        console.log(req.data.data.id)
+                        if(req.data.data.id){
+                            this.$patch((state) => {
+                                state.role = req.data.data.role
+                                state.auth = true
+                            })
+                        }
                     })
-                        .then((req) => {
-                            console.log(req.data.data.id)
-                            if(req.data.data.id){
-                                this.$patch((state) => {
-                                    state.role = req.data.data.role
-                                    state.auth = true
-                                })
-                            }
-                        })
-                }catch (err){
-                    console.log(err)
-                }
-        }
+            }catch (err){
+                console.log(err)
+            }
+        },
     }
 });

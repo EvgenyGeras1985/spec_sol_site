@@ -31,12 +31,12 @@
 <template>
   <div :class="[isMenu ? activeClass : ' ', noVisibleMenu]">
       <div class="lst__elem"  v-for="{id, text, lnk} in arr" :id="id">
-        <NuxtLink @click="showMenu(isMenu)" class="lst__elem__lnk" :to=lnk>
+        <NuxtLink @click="showMenu(isMenu.value)" class="lst__elem__lnk" :to=lnk>
           {{ text }}
         </NuxtLink>
       </div>
   </div>
-  <button class="lst__tog" @click="showMenu(isMenu)">
+  <button class="lst__tog" @click="showMenu(isMenu.value)">
     <h1>
       +
     </h1>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import ApplicationAddGood from "~/components/application/application-add-good.vue";
+
 </script>
 
 <template>

@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import { useUserStore } from "~/store/user-store";
+  import { useUserStore } from "~/store/user-store";
 
-const store = useUserStore()
-
-
-onMounted(() => {
-  store.checkAuth()
-})
+  const store = useUserStore()
+  onMounted(() => {
+    store.checkAuth()
+  })
 </script>
 
 <template>
