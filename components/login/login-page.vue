@@ -1,20 +1,24 @@
 <script setup lang="ts">
-import {ref} from "vue"
+  import {ref} from "vue"
+  import { useUserStore } from "~/store/user-store";
 
-const email = ref('')
-const password = ref('')
+  const store = useUserStore()
 
-const inLogin = (email:string, password:string) => {
-  return alert(email + password)
-}
+  const email = ref('')
+  const password = ref('')
+
+  const inLogin = (email:string, password:string) => {
+    store.login(email,password)
+    navigateTo('/')
+  }
 </script>
 
 <template>
   <section class="login">
-    <form class="login__frm" action="">
+    <form class="login__frm">
       <input class="login__field" type="text" placeholder="email" v-model="email" />
       <input class="login__field" type="text" placeholder="password" v-model="password" />
-      <input class="login__btn" @click="inLogin(email, password)" type="submit" />
+      <input class="login__btn" @click="inLogin(email, password)" value="Войти" type="button" />
       <NuxtLink class="login__lnk" to="/reg">Нет Аккаунта? Зарегестрируйся</NuxtLink>
     </form>
   </section>

@@ -7,23 +7,30 @@
   const email = ref('')
   const password = ref('')
   const phone = ref('')
+  const name = ref('')
+  const surname = ref('')
+  const  patronymics = ref('')
 
-  const inReg = (email:string, password:string, phone:string) => {
-    store.registration( email, password, phone )
-    navigateTo('/login')
+  const inReg = (name:string, surname:string,patronymics:string, email:string, password:string, phone:string ) => {
+      store.registration( email, password, phone ,name, surname,patronymics,)
+      navigateTo('/login')
   }
 </script>
 
 <template>
   <section class="reg">
     <form class="reg__frm" action="post">
+      <input class="reg__field" type="text" placeholder="Имя" v-model="name" />
+      <input class="reg__field" type="text" placeholder="Фамилия" v-model="surname" />
+      <input class="reg__field" type="text" placeholder="Отчество" v-model="patronymics" />
       <input class="reg__field" type="text" placeholder="email" v-model="email" />
       <input class="reg__field" type="text" placeholder="phone" v-model="phone" />
       <input class="reg__field" type="text" placeholder="password" v-model="password" />
-      <input class="reg__btn" @click="inReg(email, phone, password)" value="Зарегестрироваться" type="button" />
+      <input class="reg__btn" @click="inReg(name, surname,patronymics, email, phone, password)" value="Зарегестрироваться" type="button" />
       <NuxtLink class="reg__lnk" to="/login">Уже есть Аккаунт? Войти</NuxtLink>
     </form>
   </section>
+
 </template>
 
 <style scoped lang="scss">

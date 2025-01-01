@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "-": "^0.0.1",
+    "@nuxtjs/toast": "^3.3.1",
     "@pinia/nuxt": "^0.9.0",
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.9",
@@ -20,5 +21,8 @@
     "sass": "^1.83.0",
     "vue": "latest",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "nuxt3-notifications": "^1.2.3"
   }
 }

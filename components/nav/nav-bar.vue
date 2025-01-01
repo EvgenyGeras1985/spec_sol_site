@@ -1,14 +1,20 @@
 <script setup lang="ts">
   import Basket from "~/components/custom-buttons/basket-button.vue";
   import NavList from "~/components/nav/nav-list.vue";
+  import {useUserStore} from "~/store/user-store";
+
+  const store = useUserStore()
 </script>
 
 <template>
   <nav>
     <logo />
     <nav-list/>
-    <NuxtLink class="log__lnk" to="/login">
-      Мой Аккаунт
+    <NuxtLink v-if="!store.auth" class="log__lnk" to="/login">
+      Войти
+    </NuxtLink>
+    <NuxtLink v-else @click="store.logout()" class="log__lnk" to="/">
+      Выйти
     </NuxtLink>
     <basket />
   </nav>
