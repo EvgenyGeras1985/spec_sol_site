@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import { CatalogCard } from "~/types/catalog-card"
+  import { Catalog } from "~/types/catalog"
 
   const props = defineProps<{
-    card: CatalogCard
+    card: Catalog
   }>()
   const handler = () => alert('price button in process...')
 </script>

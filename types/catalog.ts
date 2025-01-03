@@ -1,12 +1,12 @@
-export interface CatalogCard {
-    img: string
-    title: string
+export interface CatalogTypes {
+    img: File
+    name: string
     category: string
     article : string
     manufacturer: string
     warranty: string
     description: string
-    certificate: string
-    passport: string
+    certificate: File
+    passport: File
     price: number
 }
