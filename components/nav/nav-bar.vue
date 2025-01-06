@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import Basket from "~/components/custom-buttons/basket-button.vue";
+  import Basket from "~/components/cart/basket-button.vue";
   import NavList from "~/components/nav/nav-list.vue";
   import {useUserStore} from "~/store/user-store";
 
@@ -62,6 +62,10 @@
       position: initial;
       top: 0;
       left: 0;
+    }
+
+    &:nth-child(-1){
+      //
     }
   }
 }

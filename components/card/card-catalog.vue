@@ -8,7 +8,7 @@
 </script>
 
 <template>
-  <section class="catalog-card" v-for="card in goodList" :key="card.price">
+  <section class="catalog-card" v-for="card in goodList" :key="card.id">
     <div class="catalog-card__img">
       <img :src="`http://localhost:9100/static/${card.image}`" alt="товар" />
     </div>

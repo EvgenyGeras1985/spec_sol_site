@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <section class="portfolio">
     <h1>Portfolio page</h1>

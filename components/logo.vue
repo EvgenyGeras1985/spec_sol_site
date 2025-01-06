@@ -1,8 +1,4 @@
-<script setup lang="ts">
-
-</script>
-
-<template>  
+<template>
   <div class="logo">
     <img src="../assets/test_images/main_logo.png" alt="basket" />
   </div>

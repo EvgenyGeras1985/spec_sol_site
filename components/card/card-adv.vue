@@ -48,9 +48,6 @@
     width: 25%;
     margin: 1rem;
 
-    &__id {}
-    &__title {}
-
     &__description {
       height: 7rem;
       text-align: justify;

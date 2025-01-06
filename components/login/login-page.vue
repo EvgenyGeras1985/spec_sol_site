@@ -3,7 +3,6 @@
   import { useUserStore } from "~/store/user-store";
 
   const store = useUserStore()
-
   const email = ref('')
   const password = ref('')
 
@@ -26,66 +25,66 @@
 
 <style scoped lang="scss">
 @import 'assets/scss/global.scss';
-.login {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(166deg, #FFF68D, #70EC94);
-
-  &__frm {
+  .login {
     width: 100%;
-    height: 50vh;
+    height: 100vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
-  }
+    background: linear-gradient(166deg, #FFF68D, #70EC94);
 
-  &__field {
-    font-size: 20px;
-    color: #0a0a0a;
-    width: 60%;
-    height: 4rem;
-    margin: 20px;
-    outline: 0;
-    border: 0;
-    border-bottom: 1px solid black;
-    padding: 0;
-    background-image: none;
-    background-color: transparent;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-  }
+    &__frm {
+      width: 100%;
+      height: 50vh;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
+    }
 
-  &__btn {
-    width: 40%;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 10px;
-    padding: 10px 15px;
+    &__field {
+      font-size: 20px;
+      color: #0a0a0a;
+      width: 60%;
+      height: 4rem;
+      margin: 20px;
+      outline: 0;
+      border: 0;
+      border-bottom: 1px solid black;
+      padding: 0;
+      background-image: none;
+      background-color: transparent;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
 
-    &:hover {
-      color: #d2d2d2;
-      background: #0a0a0a;
+    &__btn {
+      width: 40%;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 10px;
+      padding: 10px 15px;
+
+      &:hover {
+        color: #d2d2d2;
+        background: #0a0a0a;
+      }
+    }
+
+    &__lnk {
+      text-decoration: none;
+      color: blue;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        color: orange;
+      }
     }
   }
-
-  &__lnk {
-    text-decoration: none;
-    color: blue;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-
-    &:hover {
-      color: orange;
-    }
-  }
-}
 
 
 @include breakpoint(large) {

@@ -31,24 +31,24 @@
 
 <style scoped lang="scss">
 @import 'assets/scss/global.scss';
-.foot {
-  width: 100%;
-  min-height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: #d2d2d2;
-  background: black;
-
-  &__title {
+  .foot {
     width: 100%;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 3rem;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #d2d2d2;
+    background: black;
+
+    &__title {
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 3rem;
+    }
   }
-}
 
 @include breakpoint(large) {
   .foot {

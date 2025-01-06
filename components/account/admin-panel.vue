@@ -1,10 +1,6 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <section class="admin">
-    <h1>Панель Администратора</h1>
+    <h1 class="admin__title">Панель Администратора</h1>
     <application-add-good />
   </section>
 </template>
@@ -17,14 +13,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background: linear-gradient(166deg, #FFF68D, #70EC94);
-    &__panel {}
+
+    &__title {
+      margin-bottom: 1rem;
+    }
   }
 
 @include breakpoint(large) {
-  .admin{
-
-    &__panel {}
-  }
+      //
 }
 </style>

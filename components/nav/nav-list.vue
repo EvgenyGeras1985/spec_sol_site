@@ -25,18 +25,18 @@
   const activeClass = 'active'
   const noVisibleMenu = 'lst'
   const isMenu = ref(false);
-  const showMenu = (val: string) => isMenu.value = !val
+  const showMenu = (val: boolean) => isMenu.value = !val
 </script>
 
 <template>
   <div :class="[isMenu ? activeClass : ' ', noVisibleMenu]">
       <div class="lst__elem"  v-for="{id, text, lnk} in arr" :id="id">
-        <NuxtLink @click="showMenu(isMenu.value)" class="lst__elem__lnk" :to=lnk>
+        <NuxtLink @click="showMenu(isMenu)" class="lst__elem__lnk" :to=lnk>
           {{ text }}
         </NuxtLink>
       </div>
   </div>
-  <button class="lst__tog" @click="showMenu(isMenu.value)">
+  <button class="lst__tog" @click="showMenu(isMenu)">
     <h1>
       +
     </h1>
@@ -79,7 +79,7 @@
 
    //Сменить на бургер через before after
    &__tog{
-     z-index: 22;
+     z-index: 110;
      position: absolute;
      top: 104px;
      left: 1010px;

@@ -1,4 +1,5 @@
 export interface CatalogTypes {
+    id:number
     image: string
     name: string
     category: string

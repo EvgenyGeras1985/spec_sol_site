@@ -14,7 +14,6 @@
   const passport = ref()
 
   const GoodStore = useGoodStore()
-
 </script>
 
 <template>
@@ -39,27 +38,69 @@
       <input class="add-good__passport" ref="passport" type="file" placeholder="Паспорт товара" accept="docx" />
     </div>
     <input class="add-good__btn"
-           @click="GoodStore.addGood(name, category, article, manufacturer, warranty, description, price, image, passport, certificate)" type="button" value="Добавить товар" />
+           @click="GoodStore.addGood(name, category, article, manufacturer, warranty, description, price, image, passport, certificate)" type="button" value="Добавить" />
   </form>
 </template>
 
 <style scoped lang="scss">
 @import 'assets/scss/global.scss';
-.add-good{
-  &__field {}
-  &__img {}
-  &__certificate {}
-  &__passport {}
-  &__btn {}
-}
+  .add-good{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+    &__field {
+      width: 60%;
+      height: 4rem;
+      margin: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #0a0a0a;
+      outline: 0;
+      border: 0;
+      border-bottom: 1px solid black;
+      padding: 0;
+      background-image: none;
+      background-color: transparent;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+
+    &__certificate {}
+
+    &__passport {}
+
+    &__btn {
+      width: 30%;
+      height: 3rem;
+      margin-top: 3rem;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 10px;
+      padding: 10px 15px;
+
+      &:hover {
+        color: #d2d2d2;
+        background: #0a0a0a;
+      }
+    }
+  }
 
 @include breakpoint(large) {
   .add-good{
-    &__field {}
-    &__img {}
-    &__certificate {}
-    &__passport {}
-    &__btn {}
+
+    &__field {
+      width: 20%;
+    }
+
+    &__btn {
+      width: 10%;
+    }
   }
 }
 </style>

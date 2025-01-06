@@ -44,23 +44,23 @@
 
 <style scoped lang="scss">
 @import 'assets/scss/global.scss';
-.section-two {
-  margin: auto;
-  width: 60%;
-  min-height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  .section-two {
+    margin: auto;
+    width: 60%;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-  &__title {
-    width: 100%;
-    text-align: center;
-    font-size: 2.4rem;
-    font-weight: bold;
-    margin: 3rem;
+    &__title {
+      width: 100%;
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: bold;
+      margin: 3rem;
+    }
   }
-}
 
 @include breakpoint(large) {
   .section-two {

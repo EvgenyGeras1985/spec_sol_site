@@ -16,7 +16,6 @@ export const useUserStore = defineStore('user', {
     },
     getters: {
         getRole:(state) => state.role,
-
         getAuth: (state) => state.auth
     },
     actions: {
@@ -61,6 +60,7 @@ export const useUserStore = defineStore('user', {
         async logout() {
             localStorage.clear()
             this.$state.auth = false
+            this.$state.role = ''
         },
 
         async checkAuth() {
