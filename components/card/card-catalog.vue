@@ -1,19 +1,19 @@
 <script setup lang="ts">
-  import { Catalog } from "~/types/catalog"
+  import { CatalogTypes } from "~/types/catalog"
 
   const props = defineProps<{
-    card: Catalog
+    goodList: CatalogTypes[]
   }>()
   const handler = () => alert('price button in process...')
 </script>
 
 <template>
-  <section class="catalog-card">
+  <section class="catalog-card" v-for="card in goodList" :key="card.price">
     <div class="catalog-card__img">
-      <img :src="card.img" alt="товар">
+      <img :src="`http://localhost:9100/static/${card.image}`" alt="товар" />
     </div>
     <article class="catalog-card__title">
-      <h2>{{card.title}}</h2>
+      <h2>{{card.name}}</h2>
     </article>
     <div class="catalog-card__description">
       <p>{{card.description}}</p>

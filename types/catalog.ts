@@ -1,5 +1,5 @@
 export interface CatalogTypes {
-    img: File
+    image: string
     name: string
     category: string
     article : string

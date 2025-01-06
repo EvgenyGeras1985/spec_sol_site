@@ -1,67 +1,15 @@
 <script setup lang="ts">
   import CardCatalog from "~/components/card/card-catalog.vue";
+  import {useGoodStore} from "~/store/goods";
 
-  const arrTestGallary = [
-    {
-      img: "/test_good_img.png",
-      title: "test title",
-      description: "здесь будет описание",
-      price: 100000
-    },
-    {
-      img: "/test_good_img.png",
-      title: "test title",
-      description: "здесь будет описание",
-      price: 100000
-    },
-    {
-      img: "/test_good_img.png",
-      title: "test title",
-      description: "здесь будет описание",
-      price: 100000
-    },
-    {
-      img: "/test_good_img.png",
-      title: "test title",
-      description: "здесь будет описание",
-      price: 100000
-    },
-    {
-      img: "/test_good_img.png",
-      title: "test title",
-      description: "здесь будет описание",
-      price: 100000
-    },
-    {
-      img: "/test_good_img.png",
-      title: "test title",
-      description: "здесь будет описание",
-      price: 100000
-    },
-    {
-      img: "/test_good_img.png",
-      title: "test title",
-      description: "здесь будет описание",
-      price: 100000
-    },
-    {
-      img: "/test_good_img.png",
-      title: "test title",
-      description: "здесь будет описание",
-      price: 100000
-    },
-    {
-      img: "/test_good_img.png",
-      title: "test title",
-      description: "здесь будет описание",
-      price: 100000
-    }
-  ]
+  const store = useGoodStore();
+  await store.allGoods();
+  const goodsList = computed(() => store.goodsList);
 </script>
 
 <template>
   <section class="catalog">
-    <card-catalog v-for="card in arrTestGallary" :key="card.price" :card="card" />
+    <card-catalog :goodList="goodsList[0]" />
   </section>
 </template>
 

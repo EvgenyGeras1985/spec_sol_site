@@ -16,6 +16,17 @@ export const useGoodStore = defineStore('good', {
         getState : (state) => state.goodsList
     },
     actions: {
+        async allGoods(){
+            try{
+                const goods = await axios.get('http://localhost:9100/api/goods')
+                    .then((res) => {
+                        console.log(res.data)
+                        this.goodsList.push(res.data)
+                    })
+            }catch (err){
+                console.log(err)
+            }
+        },
         async addGood(name:string, category:string, article:string, manufacturer:string,warranty:string, description: string, price: number, image:any, certificate:any, passport:any){
             try{
                 const data = new FormData();
