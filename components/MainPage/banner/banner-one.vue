@@ -45,7 +45,7 @@ const handler = () => alert('in process...')
   .banner{
 
     &__title { padding: 0;}
-    &__btn {}
+    //&__btn {}
   }
 }
 </style>

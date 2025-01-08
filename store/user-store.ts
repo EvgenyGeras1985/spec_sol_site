@@ -21,7 +21,7 @@ export const useUserStore = defineStore('user', {
     actions: {
         async registration(email: string, phone: string, password: string, name:string, surname:string,patronymics:string) {
             try {
-                const user = await axios.post('http://localhost:9100/api/users/registration', {
+                await axios.post('http://localhost:9100/api/users/registration', {
                     email: email,
                     phone: phone,
                     password: password,
@@ -31,6 +31,10 @@ export const useUserStore = defineStore('user', {
                 })
                     .then((payload) => {
                         localStorage.setItem('token', payload.data.token)
+                        console.log(payload.data.id)
+                        axios.post('http://localhost:9100/api/cart/create',{
+                            id: payload.data.id
+                        })
                     })
             } catch (err) {
                 console.log(err)
@@ -39,7 +43,7 @@ export const useUserStore = defineStore('user', {
 
         async login(email: string, password: string) {
                 try{
-                    const user = await axios.post('http://localhost:9100/api/users/login', {
+                    await axios.post('http://localhost:9100/api/users/login', {
                         email: email,
                         password: password
                     })
@@ -66,7 +70,7 @@ export const useUserStore = defineStore('user', {
         async checkAuth() {
             try{
                 const myToken = localStorage.getItem('token')
-                const token = await axios.post('http://localhost:9100/api/users/auth', {
+                await axios.post('http://localhost:9100/api/users/auth', {
                     token: myToken
                 })
                     .then((req) => {

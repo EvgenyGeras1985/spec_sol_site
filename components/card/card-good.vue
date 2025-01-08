@@ -1,36 +1,31 @@
 <script setup lang="ts">
-  import { type CatalogTypes } from "~/types/CatalogTypes"
+import { type CatalogTypes} from "~/types/CatalogTypes";
 
-  const props = defineProps<{
-    goodList: CatalogTypes[]
+const props = defineProps<{
+    good: CatalogTypes
   }>()
-  const moveTo = (id:number) => {
-    navigateTo(`catalog-${id}`)
-  }
-
-  const handler = () => alert('in progress..')
 </script>
 
 <template>
-  <section @click="moveTo(card.id)" class="catalog-card" v-for="card in goodList" :key="card.id">
-    <div class="catalog-card__img">
-      <img :src="`http://localhost:9100/static/${card.image}`" alt="товар" />
+  <section class="good-card" :key="good.id">
+    <div class="good-card__img">
+      <img :src="`http://localhost:9100/static/${good.image}`" alt="товар" />
     </div>
-    <article class="catalog-card__title">
-      <h2>{{card.name}}</h2>
+    <article class="good-card__title">
+      <h2>test</h2>
     </article>
-    <div class="catalog-card__description">
-      <p>{{card.description}}</p>
+    <div class="good-card__description">
+      <p>{{ good.name }}</p>
     </div>
-    <button @click="handler()" class="catalog-card__btn">
-      От{{card.price}}руб.
+    <button class="good-card__btn">
+      {{good.price}}
     </button>
   </section>
 </template>
 
 <style scoped lang="scss">
 @import 'assets/scss/_global.scss';
-  .catalog-card {
+  .good-card {
     width: 80%;
     height: 30rem;
     margin: 1.5rem;
@@ -77,7 +72,7 @@
     }
   }
 @include breakpoint(large) {
-  .catalog-card{
+  .good-card{
     width: 20%;
 
     &:hover{

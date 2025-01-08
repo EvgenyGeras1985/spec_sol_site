@@ -63,9 +63,9 @@
   .section-one {
     padding-left: 32rem;
 
-    &__title {}
-
-    &__description {}
+    //&__title {}
+    //
+    //&__description {}
 
     &__btn {
       cursor: pointer;

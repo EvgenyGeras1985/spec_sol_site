@@ -38,7 +38,7 @@
     <article class="section-two__title">
       Почему именно мы ?
     </article>
-    <card-adv v-for="adv in advArr" :key="adv.id" :adv="adv" />
+    <card-adv v-for="item in advArr" :key="item.id" :item="item" />
   </section>
 </template>
 

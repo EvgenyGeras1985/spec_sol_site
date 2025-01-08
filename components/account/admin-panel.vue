@@ -9,7 +9,7 @@
 @import 'assets/scss/global.scss';
   .admin{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@
     background: linear-gradient(166deg, #FFF68D, #70EC94);
 
     &__title {
-      margin-bottom: 1rem;
+     margin: 12rem 0 4rem;
     }
   }
 

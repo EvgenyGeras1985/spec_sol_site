@@ -30,16 +30,14 @@
 
 <template>
   <div :class="[isMenu ? activeClass : ' ', noVisibleMenu]">
-      <div class="lst__elem"  v-for="{id, text, lnk} in arr" :id="id">
+      <div class="lst__elem" v-for="{id, text, lnk} in arr" :key="id">
         <NuxtLink @click="showMenu(isMenu)" class="lst__elem__lnk" :to=lnk>
           {{ text }}
         </NuxtLink>
       </div>
   </div>
   <button class="lst__tog" @click="showMenu(isMenu)">
-    <h1>
-      +
-    </h1>
+      {{isMenu ? "Скрыть" : "Меню"}}
   </button>
 </template>
 
@@ -49,14 +47,15 @@
    position: absolute;
    left: -1000px;
    width: 100%;
-   height: 80%;
+   height: 100%;
    display: flex;
    flex-direction: column;
    justify-content: space-around;
    align-items: center;
-   border-top: groove;
-   border-bottom: groove;
    background: linear-gradient(166deg, #FFF68D, #70EC94);
+   //border-top: groove;
+   //border-bottom: groove;
+
 
 
    &__elem {
@@ -83,17 +82,30 @@
      position: absolute;
      top: 104px;
      left: 1010px;
-     padding: 8px;
-     border-radius: 50px;
-     border: 1px solid black;
+     width: 60px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: #203307;
+     font-size: 1rem;
+     font-weight: bold;
+     padding: 18px;
+     border-radius: 50%;
+     box-shadow: 3px 2px 2px #144c04;
+     background: linear-gradient(166deg, #FFF68D, #0b521f);
 
-     &:hover{color: #f8af1a;}
+     &:hover{
+       color: white;
+       background: linear-gradient(166deg, #f8f8f8, #080e0b);
+     }
    }
  }
 
 //class to toggle burger
  .active {
-   left: 1000px;
+   position: fixed;
+   left: 0;
+   top: 0;
    transition: left 0.5s ease-in-out;
  }
 

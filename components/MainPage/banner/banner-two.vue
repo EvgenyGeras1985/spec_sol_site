@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const handler = () => alert('in process...')
+
 </script>
 
 <template>
@@ -22,15 +22,14 @@ const handler = () => alert('in process...')
     color: #d2d2d2;
     background: black;
 
-    &__title {}
-    &__btn {}
+    //&__title {}
+    //&__btn {}
   }
 
 @include breakpoint(large) {
   .banner{
 
-
-    &__title {}
+    //&__title {}
     &__btn {
       cursor: pointer;
       font-size: 15px;

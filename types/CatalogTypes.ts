@@ -7,7 +7,7 @@ export interface CatalogTypes {
     manufacturer: string
     warranty: string
     description: string
-    certificate: File
-    passport: File
+    certificate: string
+    passport: string
     price: number
 }

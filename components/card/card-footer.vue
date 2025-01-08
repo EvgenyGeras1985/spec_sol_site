@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { FooterCard } from "~/types/footer-card"
+  import { type FooterCard } from "~/types/footer-card"
 
   const props = defineProps<{
     elem: FooterCard

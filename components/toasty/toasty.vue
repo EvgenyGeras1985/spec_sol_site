@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import {toast} from "~/types/toasty-message";
 
-const props = defineProps<{
-  message: toast
-}>()
 </script>
 
 <template>

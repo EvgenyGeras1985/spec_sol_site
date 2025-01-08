@@ -19,7 +19,7 @@
 
 <template>
   <section class="reg">
-    <form class="reg__frm" action="post">
+    <form class="reg__frm">
       <input class="reg__field" type="text" placeholder="Имя" v-model="name" />
       <input class="reg__field" type="text" placeholder="Фамилия" v-model="surname" />
       <input class="reg__field" type="text" placeholder="Отчество" v-model="patronymics" />

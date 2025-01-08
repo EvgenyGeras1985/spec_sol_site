@@ -1,21 +1,21 @@
 <script setup lang="ts">
-  import { AdvCard } from "~/types/adv-card"
+  import { type AdvCard } from "~/types/adv-card"
 
   const props = defineProps<{
-    adv: AdvCard
+    item: AdvCard
   }>()
 </script>
 
 <template>
   <section class="adv">
-    <p class="adv__id">{{adv.id}}</p>
+    <p class="adv__id">{{item.id}}</p>
 
     <article class="adv__title">
-      <h2>{{adv.title}}</h2>
+      <h2>{{item.title}}</h2>
     </article>
 
     <div class="adv__description">
-      <p>{{adv.description}}</p>
+      <p>{{item.description}}</p>
     </div>
   </section>
 </template>

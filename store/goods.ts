@@ -1,33 +1,36 @@
 import axios from 'axios'
 import { defineStore } from 'pinia';
-import type { CatalogTypes } from "~/types/catalog";
-
+import { type CatalogTypes } from "~/types/CatalogTypes";
 
 interface State {
-    goodsList:  CatalogTypes[]
+    oneGood: {},
+    goodsList: CatalogTypes[]
 }
+
 export const useGoodStore = defineStore('good', {
-    state: function (){
+    state: (): State => {
         return {
-            goodsList: [] as CatalogTypes[],
+            oneGood: {},
+            goodsList: [] as CatalogTypes[]
         }
     },
     getters: {
-        getState : (state) => state.goodsList
+        getState : (state) => state.goodsList,
+        getOne:state => state.oneGood
     },
     actions: {
         async allGoods(){
             try{
-                const goods = await axios.get('http://localhost:9100/api/goods')
+                await axios.get('http://localhost:9100/api/goods')
                     .then((res) => {
                         console.log(res.data)
                         this.goodsList.push(res.data)
                     })
-            }catch (err){
+            }catch(err){
                 console.log(err)
             }
         },
-        async addGood(name:string, category:string, article:string, manufacturer:string,warranty:string, description: string, price: number, image:any, certificate:any, passport:any){
+        async addGood(name:string, category:string, article:string,total_quantity:number, manufacturer:string,warranty:string, description: string, price: number, image:any, certificate:any, passport:any){
             try{
                 const data = new FormData();
                 console.log(image.files[0].name)
@@ -41,14 +44,27 @@ export const useGoodStore = defineStore('good', {
                 data.append('warranty', warranty);
                 data.append('description', description);
                 data.append('price', JSON.stringify(price));
+                data.append('total_quantity', JSON.stringify(total_quantity));
                 await axios.post("http://localhost:9100/api/goods/add", data,{
                     headers: {
-                        'Content-Type': 'application/octate-stream'
+                        'Content-Type': 'application/octet-stream'
                     }
                 })
                     .then(res => res.data)
+                navigateTo('/')
             }catch(err){
                 console.log(err);
+            }
+        },
+        async getOneGood(id:number){
+            try{
+                await axios.post('http://localhost:9100/api/goods/one',{
+                    id: id
+                })
+                    .then((good) => this.oneGood = good.data)
+
+            }catch(err){
+                console.log(err)
             }
         }
     }

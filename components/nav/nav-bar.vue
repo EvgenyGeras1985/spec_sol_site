@@ -1,21 +1,14 @@
 <script setup lang="ts">
+  import LogOut from "~/components/buttons/log-out.vue";
   import Basket from "~/components/cart/basket-button.vue";
   import NavList from "~/components/nav/nav-list.vue";
-  import {useUserStore} from "~/store/user-store";
-
-  const store = useUserStore()
 </script>
 
 <template>
   <nav>
     <logo />
     <nav-list/>
-    <NuxtLink v-if="!store.auth" class="log__lnk" to="/login">
-      Войти
-    </NuxtLink>
-    <NuxtLink v-else @click="store.logout()" class="log__lnk" to="/">
-      Выйти
-    </NuxtLink>
+    <log-out />
     <basket />
   </nav>
 </template>
@@ -34,39 +27,14 @@
     background: linear-gradient(166deg, #FFF68D, #70EC94);
   }
 
-  .log__lnk {
-      position: absolute;
-      top: 30px;
-      left: 1030px;
-      color: #0e381d;
-      text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-shadow: 3px 3px 3px silver;
-
-      &:hover {
-        color: #f8af1a;
-      }
-    }
-
 @include breakpoint(large) {
   nav {
     position: fixed;
-    top: 5%;
-    left: 2%;
+    top: 3%;
+    left: 0;
     height: 6.2rem;
     flex-direction: row;
     background: none;
-
-    & .log__lnk {
-      position: initial;
-      top: 0;
-      left: 0;
-    }
-
-    &:nth-child(-1){
-      //
-    }
   }
 }
 </style>

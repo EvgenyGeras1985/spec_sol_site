@@ -38,8 +38,8 @@
       height: 100%;
     }
   }
-  &__title {}
-  &__count {}
+  //&__title {}
+  //&__count {}
   &__remove {
     padding: 0.5rem;
     border-radius: 10px;
@@ -58,9 +58,9 @@
     width: 86%;
 
     &__img{width: 25%;}
-    &__title {}
-    &__count {}
-    &__remove {}
+    //&__title {}
+    //&__count {}
+    //&__remove {}
   }
 }
 </style>

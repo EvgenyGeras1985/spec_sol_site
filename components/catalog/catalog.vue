@@ -4,8 +4,11 @@
   import {computed} from "vue";
 
   const store = useGoodStore();
-  await store.allGoods();
   const goodsList = computed(() => store.goodsList);
+
+  onMounted(() =>{
+    store.allGoods();
+  })
 </script>
 
 <template>
