@@ -2,14 +2,19 @@
   import AdminPanel from "~/components/account/admin-panel.vue";
   import UserAccount from "~/components/account/user-account.vue";
   import {useUserStore} from "~/store/user-store";
+  import {onMounted} from "vue";
 
   const store = useUserStore()
+
+  onMounted(() => {
+    store.checkAuth()
+  })
 </script>
 
 <template>
-    <admin-panel v-if="store.role == 'ADMIN'" />
-    <user-account v-if="store.role == 'USER'" />
-    <h1 v-if="store.role == ' '">
+    <admin-panel v-if="store.user.role == 'ADMIN'" />
+    <user-account v-if="store.user.role == 'USER'" />
+    <h1 v-if="store.user.role == ''">
       Вы не авторизованы
     </h1>
 </template>

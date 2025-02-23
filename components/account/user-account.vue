@@ -1,29 +1,26 @@
 <script setup lang="ts">
-  const testUser = [
-    {
-      id : 1,
-      name: "Шредер Кренгович",
-      phone: +76666666666,
-      email: 'shredder@mail.ru'
-    }
-  ]
+  import {useUserStore} from "~/store/user-store";
 
+  const store = useUserStore()
 
   const handler = () => alert('Эта кнопка будет запоминать конфиг товаров')
 </script>
 
 <template>
-  <section class="user" :id="testUser[0].id">
-    <h1>Личный кабинет</h1>
+  <section class="user" >
+    <h1>Личный Кабинет</h1>
+
     <section class="user__content">
-      <div class="user__info">
-        <p>{{testUser[0].name}}</p>
-        <p>{{testUser[0].phone}}</p>
-        <p>{{testUser[0].email}}</p>
+      <div class="user__info" :key="store.user.id">
+        <p>{{store.user.surname}}</p>
+        <p>{{store.user.name}}</p>
+        <p>{{store.user.patronymics}}</p>
+        <br />
+        <p>{{store.user.email}}</p>
+        <p>{{store.user.phone}}</p>
       </div>
       <div class="user__goods">
-        <card-user />
-        <card-user />
+
       </div>
       <button @click="handler" class="user__btn">
         Запомнить конфигурацию

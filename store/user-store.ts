@@ -1,22 +1,26 @@
 import axios from 'axios'
 import { defineStore } from 'pinia';
-
-interface State {
-    role: string,
-    auth: boolean,
-}
+import type { User } from '@/types/user';
 
 
 export const useUserStore = defineStore('user', {
-    state: (): State => {
-        return {
-            role: " ",
+    state: () => ({
+        user: {
+            name: '',
+            surname: '',
+            patronymics: '',
+            id: 0,
+            cart_id: 0,
+            email: '',
+            phone: '',
             auth: false,
-        }
-    },
+            role: '',
+        } as User,
+        auth: false,
+    }),
     getters: {
-        getRole:(state) => state.role,
-        getAuth: (state) => state.auth
+        getAuth: (state) => state.auth,
+        getRole: (state) => state.user.role,
     },
     actions: {
         async registration(email: string, phone: string, password: string, name:string, surname:string,patronymics:string) {
@@ -31,10 +35,6 @@ export const useUserStore = defineStore('user', {
                 })
                     .then((payload) => {
                         localStorage.setItem('token', payload.data.token)
-                        console.log(payload.data.id)
-                        axios.post('http://localhost:9100/api/cart/create',{
-                            id: payload.data.id
-                        })
                     })
             } catch (err) {
                 console.log(err)
@@ -52,8 +52,8 @@ export const useUserStore = defineStore('user', {
                             localStorage.clear()
                             localStorage.setItem('token', req.data.token)
                             this.$patch((state) => {
-                                state.role = req.data.role
                                 state.auth = true
+                                state.user.role = req.data.role
                             })
                         })
                 }catch(err){
@@ -64,7 +64,7 @@ export const useUserStore = defineStore('user', {
         async logout() {
             localStorage.clear()
             this.$state.auth = false
-            this.$state.role = ''
+            this.$state.user.role = ''
         },
 
         async checkAuth() {
@@ -77,7 +77,14 @@ export const useUserStore = defineStore('user', {
                         console.log(req.data.data.id)
                         if(req.data.data.id){
                             this.$patch((state) => {
-                                state.role = req.data.data.role
+                                state.user.name = req.data.data.name
+                                state.user.surname = req.data.data.surname
+                                state.user.patronymics = req.data.data.patronymics
+                                state.user.id = req.data.data.id
+                                state.user.cart_id = req.data.data.id
+                                state.user.email = req.data.data.email
+                                state.user.phone = req.data.data.phone
+                                state.user.role = req.data.data.role
                                 state.auth = true
                             })
                         }

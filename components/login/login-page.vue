@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import {ref} from "vue"
   import { useUserStore } from "~/store/user-store";
+  import {refreshCurrentPageData} from "@vue/devtools-core";
 
   const store = useUserStore()
   const email = ref('')

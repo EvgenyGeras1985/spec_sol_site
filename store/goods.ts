@@ -30,6 +30,7 @@ export const useGoodStore = defineStore('good', {
                 console.log(err)
             }
         },
+        //problem here
         async addGood(name:string, category:string, article:string,total_quantity:number, manufacturer:string,warranty:string, description: string, price: number, image:any, certificate:any, passport:any){
             try{
                 const data = new FormData();

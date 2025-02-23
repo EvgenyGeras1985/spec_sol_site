@@ -1,6 +1,17 @@
+<script setup lang="ts">
+  import {useUserStore} from "~/store/user-store";
+  import {onMounted} from "vue";
+
+  const store = useUserStore();
+
+  onMounted(() => {
+    store.checkAuth()
+  })
+</script>
+
 <template>
   <section class="cart">
-    <h1>Basket page</h1>
+    <h1>Корзина пользователя {{store.user.cart_id}}, {{store.user.surname}}</h1>
   </section>
 </template>
 
