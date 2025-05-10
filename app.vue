@@ -1,3 +1,8 @@
 <template>
-  <NuxtPage />
+  <suspense>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </suspense>
 </template>
+
