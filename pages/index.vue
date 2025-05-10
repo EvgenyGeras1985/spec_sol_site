@@ -1,22 +1,50 @@
-<template>
-  <h1>1 : 41 : 00 of video</h1>
-  <a href="#" @click="view('home')">Home</a>
-  <a href="#" @click="view('test')">test</a>
-
-  <LazyButton v-if="page == 'home'"></LazyButton>
-  <LazyTest v-if="page == 'test'"></LazyTest>
-
-</template>
-
 <script setup lang="ts">
-const page = ref('home')
 
-function view(name: string){
-  page.value = name
-}
 </script>
 
+<template>
+  <main>
+    <section class="section-one">
+      <article class="section-one__title">
+        Современные <br />
+        решения для <br />
+        безопасного <br />
+        будущего
+      </article>
+      <h4 class="section-one__description">
+        Реализовываем комплексы систем безопасности <br />
+        по всей России с гарантией 5 лет.
+      </h4>
+      <button class="section-one__btn">
+        Оставить <br />
+        заявку
+      </button>
+    </section>
+  </main>
+</template>
 
-<style scoped>
+<style scoped lang="scss">
+@import 'assets/scss/global';
+  main {
+    padding-top: 75px;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(166deg, #FFF68D, #70EC94);
+    section-one {
+      &__title{}
+      &__description{}
+      &__btn{}
+    }
+  }
 
+
+@include breakpoint(large) {
+  main {
+    section-one {
+      &__title{}
+      &__description{}
+      &__btn{}
+    }
+  }
+}
 </style>
